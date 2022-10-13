@@ -86,3 +86,17 @@ section:Button{
         loadstring(game:HttpGet('https://pastebin.com/raw/uq45tuXV'))()
     end
 }
+
+local label = section:Label("Some Ui Toggle Idk")
+
+section:Keybind{
+    Name = "UI Toggle",
+    Flag = "UI Toggle",
+    Default = Enum.KeyCode.RightShift,
+    Blacklist = {Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3},
+    Callback = function(_, fromsetting)
+        if not fromsetting then
+            library:Close()
+        end
+    end
+}
